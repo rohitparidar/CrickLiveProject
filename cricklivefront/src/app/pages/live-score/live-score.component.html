@@ -1,0 +1,39 @@
+<div class="">
+
+  <h1 class="text-4xl font-extrabold text-gray-800 px-2">Live Cricket Score</h1>
+  <div class="items-stretch card-container flex-wrap flex-col md:flex-row flex">
+    @for (match of liveMatches; track $index)
+    {
+    <div class="p-2 md:w-[25%] w-full">
+      <app-match-card [match]="match"></app-match-card>
+    </div>
+    }
+    @empty {
+    There Is No Match
+    }
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- <div class="">
+
+  <h1 class="text-4xl font-extrabold text-gray-800 px-2">Live Cricket Score</h1>
+  <div class="items-stretch card-container flex-wrap flex-col md:flex-row flex">
+    <div *ngFor="let match of liveMatches; let i = index" class="p-2 md:w-[25%] w-full">
+      <app-match-card [match]="match"></app-match-card>
+      <div *ngIf="commentaryLive && commentaryLive[i]">
+        <p>{{ commentaryLive[i] }}</p>
+      </div>
+    </div>
+    <div *ngIf="!liveMatches || liveMatches.length === 0">
+      <p>There Is No Match</p>
+    </div>
+  </div>
+</div> -->
